@@ -1,0 +1,470 @@
+/*
+            *************************
+            *************************
+                    G L O B A L >>glob
+            *************************
+            *************************
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&family=Dosis:wght@200;400;800&family=Exo:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,400&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,200&family=Raleway:wght@400;600;800&display=swap');
+
+:root {
+
+
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    list-style: none;
+    overflow-x: hidden;
+    /*  -------  COLORS -------     */
+    --blue: #4E5D75;
+    --blue-darker: #2D3142;
+    --blue-darker-70: rgba(45, 49, 66, 0.85);
+    --white: #FFF;
+    --yellow: #FFC300;
+    --orange: #EF8354;
+    --gray: #E5E5E5;
+    --gray-darker: #C4C4C4;
+    --gray-darker-50: rgba(196, 196, 196, 0.33);
+    /*  -------  FONTS -------     */
+    font-size: 62.5%;
+    /*--ff-main: 'Poppins', sans-serif;*/
+    --ff-titles-prim: 'Comfortaa', cursive;
+    --ff-titles-secondary: 'Exo', sans-serif;
+    --ff-list-sm-txt: 'Dosis', sans-serif;
+    --ff-txt-prim: 'Montserrat', sans-serif;
+    --ff-txt-secondary: 'Poppins', sans-serif;
+    --ff-alt-txt: 'Raleway', sans-serif;
+    /*ideal*/
+    --fsz-1: clamp(2.4rem, 5vw, 6rem);
+    --fsz-2: clamp(2.2rem, 3vw, 4.5rem);
+    --fsz-3: clamp(1.1rem, 2vw, 1.8rem);
+    --fsz-4: clamp(0.8rem, 1.8vw, 1.6rem);
+
+    --reg: 400;
+    --bold: 600;
+    --bolder: 800;
+    /*  -------  VARIABLES -------     */
+    --btn-menu-H: 5vh;
+    --nav-H: 10vh;
+    --foot-H: 25vh;
+}
+
+
+
+
+
+/*
+            *************************
+            *************************
+                    F O N T S
+            *************************
+            *************************
+
+*/
+body{
+    font-family: var(--ff-txt-prim);
+}
+h1{font-family: var(--ff-titles-prim)}
+h2, h3, h4{font-family: var(--ff-titles-secondary)}
+li{font-family: var(--ff-list-sm-txt)}
+/*  ------------
+       FONT SIZES >>fs
+    ------------ */
+
+h1,
+.container h2{
+    font-size:var(--fsz-1);
+}
+h2,
+.links{
+    font-size:var(--fsz-2);
+}
+body,
+p,
+*:before,
+*:after,
+a,
+li{
+    font-size: var(--fsz-3);
+}
+
+.bonjour{
+    font-size: var(--fsz-4);
+}
+/*  ------------
+   FONT POSITION >>fpos
+    ------------ */
+
+*{
+    text-align: justify;
+}
+h1,
+h2{
+    text-align: center;
+    line-height: 200%;
+}
+
+/*  ------------
+   FONT PROPERTIES >>fprop
+    ------------ */
+body,
+.wrapper .links,
+p{
+    /*letter-spacing: 5px;*/
+    line-height: 120%;
+}
+
+h1,
+h2,
+nav li a,
+nav li a:visited,
+nav li a:hover{
+    text-transform: uppercase;
+}
+
+h1{
+    font-weight: var(--bolder);
+    letter-spacing: 1rem;
+}
+
+h2{
+    font-weight: var(--bold);
+    letter-spacing: 0.5rem;
+}
+
+p,
+*:before,
+*:after,
+a,
+li{
+    font-weight: var(--reg);
+}
+
+.wrapper .links{
+    text-decoration: underline;
+    /*letter-spacing: 3px;*/
+}
+.wrapper .bonjour{
+    font-weight: 600;
+    /*letter-spacing: 1px;*/
+}
+
+
+/*  ------------
+     FONT COLORS >>fcol
+    ------------ */
+body{
+    color: var(--blue-darker);
+}
+
+h1,
+h2{
+    text-shadow: 3px 10px 10px rgba(0, 0, 0, 0.25);
+    color: var(--blue);
+}
+
+.light{
+    color: var(--gray-darker);
+}
+
+.navTop li a,
+.navTop li a:visited{
+    color: var(--white);
+}
+    .nav li a:hover{
+        color: var(--orange);
+    }
+
+.navDrop li a,
+.navDrop li a:visited{
+    color: var(--blue-darker);
+}
+    .navDrop li a:hover{
+        color: var(--orange);
+    }
+
+
+
+/*
+            *************************
+            *************************
+                    VIEW PORT
+            *************************
+            *************************
+
+*/
+
+
+/*  ------------
+      WIDTH >>width
+    ------------ */
+body,
+nav,
+main,
+footer{
+    width: 100vw;
+}
+
+nav.navDrop,
+.btn-wrap{
+    width: 100%;
+}
+
+
+.img{
+    width: 12vw;
+}
+
+p{
+    width: 90%;
+}
+@media (min-width : 350px) {
+    p{ width: 85%;}
+}
+    @media (min-width : 430px) {
+        p{ width: 78%;}
+    }
+        @media (min-width : 500px) {
+            p{ width: 74%;}
+        }
+            @media (min-width : 650px) {
+                p{ width: 71%;}
+            }
+                @media (min-width : 760px) {
+                    p{ width: 69%;}
+                }
+                    @media (min-width : 810px) {
+                        p{ width: 65%;}
+                    }
+                        @media (min-width : 890px) {
+                            p{ width: 62%;}
+                        }
+                            @media (min-width : 980px) {
+                                p{ width: 58%;}
+                            }
+                                @media (min-width : 1080px) {
+                                    p{ width: 50%;}
+                                }
+                                    @media (min-width : 1400px) {
+                                        p{ width: 40%;}
+                                    }
+
+/*  ------------
+      HEIGHT >>height
+    ------------ */
+.navTop{
+    height: var(--nav-H);
+}
+.navDrop{
+    height:100vh;
+}
+.btn-wrap {
+    height: var(--btn-menu-H);
+}
+footer {
+    height: var(--foot-H);
+}
+body,
+main{
+    height: 100%;
+}
+
+    .img {
+        height: 27vh;
+    }
+        .profile{
+            height: 100%;
+        }
+
+        .profile-back{
+            height: 55%;
+        }
+
+.logo{
+    width: 45px;
+    height:45px;
+}
+
+
+/*  ------------
+       DISPLAY >>display
+    ------------ */
+
+.navTop ul li, footer{
+    display: inline-block;
+}
+
+.navTop,
+.navDrop{
+    display: grid;
+    place-content: center;
+    visibility: hidden;
+}
+.btn-wrap{
+    display: grid;
+    place-content: center;
+}
+    @media (min-width: 648px){
+        .navDrop,
+        .btn-wrap{ display: none; }
+        .navTop{ visibility: visible; }
+        .nav-onscreen{
+            transform: translateY(var(--nav-H));
+        }
+    }
+
+/*-------------------*/
+.home-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.home-container .social{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+@media {}
+
+/*  ------------
+      POSITION >>position
+    ------------ */
+.navTop {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+.navDrop{
+    position: fixed;
+    z-index: 15;
+}
+.btn-wrap{
+    position: fixed;
+    z-index: 20;
+}
+#btn-menu{
+    /*position:relative;*/
+    /*bottom: 0;*/
+}
+
+.profile-back{
+    position: absolute;
+    right:5%;
+    bottom: 0;
+}
+
+/*  ------------
+      BOX PROPS >>box
+    ------------ */
+
+.navTop ul li{
+    margin-inline: 2rem;
+}
+.navDrop li{
+    margin: 2rem 0;
+}
+.wrapper {
+    padding-top: 5rem;
+}
+.about h2{
+    margin: 3rem 0;
+}
+p{
+    margin-bottom: 2rem;
+}
+
+
+/*  ------------
+      BORDERS >>border
+    ------------ */
+
+
+/*
+            *************************
+            *************************
+                B A C K G R O U N D >>background
+            *************************
+            *************************
+
+*/
+footer{
+    background:var(--blue-darker);
+}
+nav, footer{
+    background:var(--blue-darker-70);
+}
+.img .profile-back{
+    background: var(--orange);
+}
+.background{
+    /*background-color: var(--gray);*/
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-attachment: fixed;
+    filter: blur(3px);
+    clip-path: polygon(circle(50%))
+}
+.background-mountain{
+    background-image: url('https://images.unsplash.com/photo-1502790671504-542ad42d5189?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
+}
+
+.navDrop
+{
+    background-color: rgba(229, 229, 229, 0.85);
+}
+
+/*
+    ****************
+        IMG / LOGO >>logo
+    ****************
+*/
+
+.img .profile{
+    object-position: center;
+    object-fit: cover;
+}
+
+#btn-menu{
+    margin-top: 15px;
+    height: 5vh;
+    z-index: 50;
+    background-color: inherit;
+    color: #2D3142;
+    border: none;
+    box-shadow: 0 2px 5px var(--gray-darker-50),
+                0 5px 10px var(--gray-darker-50);
+    border-radius: 3px;
+}
+#btn-menu:hover{
+    box-shadow: 0 2px 1px 2px var(--gray-darker-50),
+                 0 5px 5px 3px var(--gray-darker-50);
+}
+#btn-menu:active,
+#btn-menu::selection{
+    box-shadow: none;
+    font-size: 95%;
+}
+
+/*
+            *************************
+            *************************
+                T R A N S F O R M S >>transform
+            *************************
+            *************************
+
+*/
+
+
+form > textarea {
+    resize: none;
+}
+
+
