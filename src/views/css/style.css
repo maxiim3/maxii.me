@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&family=Dosis:wght@200;400;800&family=Exo:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,400&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,200&family=Raleway:wght@400;600;800&display=swap');
 
 :root {
-
-
     scroll-behavior: smooth;
     box-sizing: border-box;
     list-style: none;
@@ -19,7 +17,7 @@
     --orange: #EF8354;
     --gray: #E5E5E5;
     --gray-darker: #C4C4C4;
-    --gray-darker-50: rgba(196, 196, 196, 0.33);
+    --gray-darker-50: rgba(196, 196, 196, 0.45);
 
     /*  -------  FONTS -------     */
     font-size: 62.5%;
@@ -43,6 +41,16 @@
     --btn-menu-H: 5vh;
     --nav-H: 10vh;
     --foot-H: 25vh;
+}
+::selection{
+    background-color: var(--gray-darker-50);
+}
+
+button:hover{
+    cursor: pointer;
+}
+button:active{
+    cursor: grabbing;
 }
 
 
@@ -144,21 +152,27 @@ main{
     grid-template-areas: "area-top   "
                          "area-center";
 }
-
-    @media (min-width: 980px){
-        .formation-container .grid-content,
-        .xp-container .grid-content,
-        .skills-container .grid-content{
-            height: 100%;
-            display: grid;
-            grid-template-columns: 50fr 50fr;
-            grid-template-areas: "area-half-left  area-half-right";
-        }
-            .grid-content{
-                justify-self: center;
+        @media (min-width: 980px){
+            .formation-container .grid-content,
+            .skills-container .grid-content{
+                height: 100%;
+                display: grid;
+                grid-template-columns: 50fr 50fr;
+                grid-template-areas: "area-half-left  area-half-right";
             }
-
-    }
+            .xp-container .grid-content{
+                height: 100%;
+                display: grid;
+                grid-template-rows: auto 90fr;
+                grid-template-columns: 50fr 50fr;
+                grid-template-areas:    "area-top        area-top"
+                                        "area-half-left  area-half-right";
+            }
+            .obj-xp1 ul{
+                columns: 2;
+                column-gap: 2rem;
+            }
+        }
 
     .grid-header{
         grid-area: area-top;
@@ -172,13 +186,13 @@ main{
     }
         .grid-half-left {
             grid-area: area-half-left;
-            justify-self: center;
-            align-self: center;
+            justify-self: start;
+            align-self: start;
         }
         .grid-half-right {
             grid-area: area-half-right;
-            justify-self: center;
-            align-self: center;
+            justify-self: start;
+            align-self: start;
         }
             .grid-third-left {
                 grid-area: area-third-left;
@@ -203,6 +217,16 @@ main{
     .home-container :not(a){
         text-transform: uppercase;
     }
+        .home-container .grid-half-left {
+            grid-area: area-half-left;
+            justify-self: center;
+            align-self: center;
+        }
+        .home-container .grid-half-right {
+            grid-area: area-half-right;
+            justify-self: center;
+            align-self: center;
+        }
 
 .navTop,
 .navDrop,
@@ -230,6 +254,33 @@ main{
                     visibility 500ms;
         transition-timing-function: ease-in-out;
     }
+        @media (min-width: 730px) {
+            .navDrop,
+            .btn-wrap {
+                display: none;
+            }
+            .navTop {
+                visibility: visible;
+                display: initial;
+            }
+            .navTop ul {
+                background-color: rgba(196, 196, 196, 0.1);
+                box-shadow: 0 5px 10px rgba(196, 196, 196, 0.1);
+                display: flex;
+                height: 10vh;
+                width: 100vw;
+                text-align: center;
+                justify-content: space-around;
+                text-transform: uppercase;
+                align-items: center;
+            }
+            .links a {
+                font-weight: var(--reg);
+                font-size: 1.6rem;
+                margin: 1rem;
+            }
+
+        }
         .navDrop ul{
             height: 70vh;
             display: flex;
@@ -248,6 +299,10 @@ main{
         }
 
         .navDrop a:hover{
+            color: var(--orange);
+        }
+        .linksActive {
+            font-weight: var(--bold);
             color: var(--orange);
         }
 
@@ -295,10 +350,10 @@ hr{
 }
     .about-container p,
     .form-container{
-        margin-top: 2rem;
+        padingg-top: 2rem;
         font-size: 1.6rem;
         text-align: justify;
-        line-height: 2rem;
+        line-height: 2.5rem;
     }
 
         .formation-container,
@@ -342,17 +397,25 @@ hr{
     font-size: 1.2rem;
 }
      .objet p,
-     .objet li{
+     .objet li,
+     .objet a{
          font-size: 1.5rem;
          line-height: 2rem;
          letter-spacing: 0.1rem;
          font-weight: 200;
      }
+     .objet a{
+         color: var(--orange);
+     }
+     .objet a:hover{
+         color: var(--blue-darker);
+     }
 
-    .xp-container article:first-of-type h3,
-    .xp-container article:first-of-type li {
-        text-align: center;
-    }
+
+    /*.xp-container article:first-of-type h3,*/
+    /*.xp-container article:first-of-type li {*/
+    /*    text-align: center;*/
+    /*}*/
 
 .skills-container li.light {
     font-style: italic;
@@ -381,16 +444,27 @@ hr{
         text-align: left;
     }
 
-    .form-container input,
-    .form-container textarea{
-        width: 100%;
+    .form-container input:hover,
+    .form-container textarea:hover {
+        box-shadow: 0 2px 5px var(--gray-darker-50);
     }
     .form-container input,
     .form-container textarea {
+        width: 100%;
         border: none;
+        padding-left: 1rem;
         color: white;
         font-size: 1.6rem;
         background: rgba(224, 214, 214, 0.33);
+    }
+        @media (min-width: 500px) {
+            .form-container input,
+            .form-container textarea {
+                border-radius: 15px;
+            }
+        }
+    .form-container textarea{
+        padding-top: 2rem;
     }
     .form-container input::selection,
     .form-container textarea::selection,
@@ -399,6 +473,12 @@ hr{
         color: black;
         font-size: 1.6rem;
         background: rgba(224, 214, 214, 0.65);
+    }
+    .form-container input::placeholder,
+    .form-container textarea::placeholder{
+        font-family: var(--ff-titles-prim);
+        font-size: 1.2rem;
+        color: var(--gray-darker);
     }
 
     .form-container input{
@@ -427,7 +507,6 @@ hr{
 
 
 
-
 footer {
     background-color: rgba(45, 49, 66, 0.2);
     padding: 3rem 1rem;
@@ -444,10 +523,15 @@ footer {
         text-align: center;
     }
 
-    footer i.fab {
-        color: orange;
-        font-weight: 400;
+    footer i.fab,
+    footer i.fas{
+        color: var(--gray-darker-50);
+        font-size: 1.5rem;
     }
+        footer a:hover i.fab,
+        footer a:hover i.fas{
+            color: var(--orange);
+        }
 
 
 
@@ -456,3 +540,5 @@ footer {
         .light {
             color: var(--gray-darker-50) !important;
         }
+
+

@@ -7,8 +7,8 @@ $pages = [
                 <section class=\"container home-container\">
                     <h1  class=\"grid-header\">Maxime Tamburrini</h1>
                     <h2  class=\"grid-content\">Développeur Fullstack junior</h2>
-                    <a   class=\"grid-half-left\"  href=\"https://github.com/maxiim3\"><i class=\"fab fa-github-square\"></i>Git Hub</a>
-                    <a   class=\"grid-half-right\" href=\"https://www.linkedin.com/in/maxime-tamburrini-7048895a/\"><i class=\"fab fa-linkedin\"></i>Linked In</a>
+                    <a target='_blank' title='ouvrir dans un nouvel onglet'  class=\"grid-half-left\"  href=\"https://github.com/maxiim3\"><i class=\"fab fa-github-square\"></i>Git Hub</a>
+                    <a target='_blank'  title='ouvrir dans un nouvel onglet' class=\"grid-half-right\" href=\"https://www.linkedin.com/in/maxime-tamburrini-7048895a/\"><i class=\"fab fa-linkedin\"></i>Linked In</a>
                 </section>
                 "),
     "about" => new Pages(
@@ -21,11 +21,12 @@ $pages = [
                     <article class=\"grid-content\">
                         <p>Je m’appelle Maxime, j’ai 33 ans</p>
                         <p>La passion pour le web a toujours été présente en moi, mais j’ai emprunté différents chemins avant d’en venir réellement au code.</p>
-                        <p>J’ai d’abord travaillé à dans la Post-Production Cinéma à Paris, d’où je suis origniaire. Avant de voyager en France et en Europe en travaillant comme saisonnier. C’est au cours de ces voyages que j’ai rencontré mon épouse. Nous nous sommes installés dans cette magnifique ville ensoleillée qu’est Montpellier et avons deux enfants.</p>
-                        <p>Le premier confinement m’a permis de me lancer dans le code en créant des scripts en Python. Je n’ai plus lâché le clavier depuis. <br>
-                            J’ai poursuivit en me formant en parrallèle de mon travail, tous les jours. En suivant des formations en ligne je me suis ainsi initié au HTML/CSS. Puis j’ai voulut ancrer des fondations solides m’interessant aux Designs Patterns, à l’algorithmie et à la programmation orientée Objet avec Java. Je me suis ensuiet tourné vers JavaScript.</p>
-                        <p>C’est à ce moment que j’ai franchit le pas et suivit une formation tremplin chez Diginamic.Cette formation m’a permis d’assurer ma reconversion professionnelle et de confirmer les bases solides que j’ai acquises et complétées avec cette formation.</p>
+                        <p>J’ai d’abord travaillé dans la Post-Production Cinéma à Paris, d’où je suis originaire, avant de voyager comme saisonnier en France et en Europe. C’est au cours de l’un de ces voyages que j’ai rencontré mon épouse. Nous nous sommes installés dans cette magnifique ville ensoleillée qu’est Montpellier et avons deux enfants.</p>
+                        <p>Le premier confinement m’a permis de me lancer dans le code en créant des scripts en Python. Je n’ai plus lâché le clavier depuis.</p>
+                        <p>J’ai poursuivi en me formant en parallèle de mon travail, tous les jours. En suivant des formations en ligne je me suis ainsi initié au Python puis HTML/CSS. J’ai ensuite ancrer des fondations solides en m'intéressant aux Designs Patterns, à l'algorithmique et à la programmation orientée Objet avec Java. Je me suis ensuiet tourné vers JavaScript.</p>
+                        <p>C’est à ce moment que j’ai franchit le pas et suivit une formation tremplin chez Diginamic. Cette formation m’a permis d’assurer ma reconversion professionnelle et de confirmer les bases solides que j’ai acquises et complétées avec cette formation.</p>
                         <p>Je débute une formation de développeur web et mobile en février prochain.</p>
+                        
                     </article>
                 </section>
                 "),
@@ -153,47 +154,48 @@ $pages = [
                     <hr class='grid-header'>
                     
                     <div class=\"grid-content\">
-                        <div class='sub grid-half-left'>
-                            <article class=\"objet obj-xp\">
+                       <div class='sub grid-header'>
+                            <article class=\"objet obj-xp obj-xp1\">
                                 <h3>Quelques compétences transversales développées:</h3>
                                 <ul>
-                                    <li>Gérer la pression et les deadline.</li>
-                                    <li>Organisé</li>
-                                    <li>Cusiosité</li>
-                                    <li>Travailler en équipe</li>
-                                    <li>Sortir de sa zone de confort (connaissances, domaines techniques)</li>
-                                    <li>Travailler avec des sessions de plusieurs milliers de fichiers</li>
-                                    <li>Être dynamique et efficace</li>
-                                    <li>Manager et transmettre des compértences/connaissances</li>
-                                    <li>Une certaine endurance physique et mentale</li>
-                                    <li>Patience</li>
-                                    <li>La prise d'initiative</li>
-                                    <li>Improvisation</li>
-                                    <li>Se remettre en question</li>
+                                    <li>• Gérer la pression et les deadline.</li>
+                                    <li>• Organisé</li>
+                                    <li>• Cusiosité</li>
+                                    <li>• Travailler en équipe</li>
+                                    <li>• Sortir de sa zone de confort (connaissances, domaines techniques)</li>
+                                    <li>• Travailler avec des sessions de plusieurs milliers de fichiers</li>
+                                    <li>• Être dynamique et efficace</li>
+                                    <li>• Manager et transmettre des compértences/connaissances</li>
+                                    <li>• Une certaine endurance physique et mentale</li>
+                                    <li>• Patience</li>
+                                    <li>• La prise d'initiative</li>
+                                    <li>• Improvisation</li>
+                                    <li>• Se remettre en question</li>
                                 </ul>
                             </article>
-                            
-                            <article class='objet obj-xp'>
+                       </div>
+                        <div class='sub grid-half-left'>
+                            <article class='objet obj-xp obj-xp2'>
                                 <h3>ingénieur du son</h3>
-                                <h4>La Formation d'ingénieur du son à la SAE Institute Paris</h4>
+                                <h4>La Formation d'ingénieur du son à la <a href='https://www.sae.edu/fra/fr' title='Ouvrir le site de la SAE Institue dans un nouvel onglet'>SAE Institute Paris</a></h4>
                                 <p>Je me suis familliariser avec l'environnement  MacOS ainsi que le DAW AVID ProTools. Cette formation m'a permis de développer une grande capcaité de visualisation au travers des synoptiques des consoles de mixages et \"rootings\". Mais aussi la capacité à gérer des projets dans des contraintes matériels, techniques et temporelles imposés.</p>
                             </article>
                         
-                            <article class='objet obj-xp'>
+                            <article class='objet obj-xp obj-xp3'>
                                 <h3>ingénieur du son</h3>
                                 <h4>Mon aventure dans le milieu de la post-production cinéma</h4>
                                 <p>Suite à mon stage de fin d'étude effectué chez Film Factory, j'ai eu la chance d’obtenir une place d’apprentis et d'être mentoré par les meilleurs techniciens français de la post-production cinéma:</p>
                                 <ul>
-                                    <li>Le Sound Designer Frederic Lelouet (Dias De Gracia, Or Noir, BabySitting, Paradise Lost...) </li>
-                                    <li>Le Mixeur Vincent Arnardi (Amélie Poulain, Taxi, Stalingrad.. ) </li>
-                                    <li>Le Bruiteur Nicolas Becker (Batman begins, Harry Potter, Gravity..) </li>
-                                    <p>Une expérience intense, humainement et professionnellement. A leur coté j'ai travaillé sur de projets comme BabySitting  ou Pionner... Vous retrouverez quelques unes de mes expériences sur ma page IMDB .</p>
+                                    <li>• Le Sound Designer Frederic Lelouet (Dias De Gracia, Or Noir, BabySitting, Paradise Lost...) </li>
+                                    <li>• Le Mixeur Vincent Arnardi (Amélie Poulain, Taxi, Stalingrad.. ) </li>
+                                    <li>• Le Bruiteur Nicolas Becker (Batman begins, Harry Potter, Gravity..) </li>
+                                    <p>Une expérience intense, humainement et professionnellement. A leur coté j'ai travaillé sur de projets comme BabySitting  ou Pionner... Vous retrouverez quelques unes de mes expériences sur <a href='https://www.imdb.com/name/nm5708197/?ref_=fn_al_nm_1' title='Ouvrir IMDB dans un nouvel onglet'>ma page IMDB</a> .</p>
                                 </ul>
                             </article>
                             
                             <article class='objet obj-xp'>
                                 <h4>Créations sonores et musicales</h4>
-                                <p>A la suite de mes expériences dans le cinéma je me suis intéressé au son binaural (Famillièrement son 3D). J'ai participé au Biennal d'Art Contemporain de Goteborg en 2015 (GIBCA 2015). J'ai fait différents enregistrements d'ambiance sonores en binaural 3D et en Stéréo. Vous pouvez retrouver quelques échantillons sur mon Soundcloud</p>
+                                <p>A la suite de mes expériences dans le cinéma je me suis intéressé au son binaural (Famillièrement son 3D). J'ai participé au Biennal d'Art Contemporain de Goteborg en 2015 (GIBCA 2015). J'ai fait différents enregistrements d'ambiance sonores en binaural 3D et en Stéréo. Vous pouvez retrouver quelques échantillons sur mon <a href='https://soundcloud.com/maxdjukic' title='Ouvrir Soundcloud dans un nouvel onglet'>Soundcloud</a></p>
                             </article>
                         </div>
               
@@ -207,13 +209,13 @@ $pages = [
                                 <h3>autres expériences professionnelles</h3>
                                 <p>J'ai travaillé dans la restauration pendant plusieurs années. Parfois par passion, d'autres fois par obligation... J'ai cependant appris énormément professionnellement et humainement au cours des expériences accumulées. Voici quelques unes de ces expériences de la plus reecente à la plus ancienne:</p>
                                 <ul>
-                                    <li>Apprentis puis Chef Pizzaiolo a la pizzeria Mongelli de Montpellier de 2019 à 2021</li>
-                                    <li>Responsable de cuisine au Petit Nice à Montpellier en 2019)</li>
-                                    <li>Manager d'une Auberge de Jeunesse en Macédoine du Nord de 2016 à 2018</li>
-                                    <li>Woofer et apprentis agriculteur/permaculteur/cuisinier/traiteur en Normandie en 2015 et 2016</li>
-                                    <li>Serveur dans la boite de nuit les Aviateurs à Strasbourg en 2015</li>
-                                    <li>Responsable de bar et salle au Clin\'s 20, Paris 20ème en 2014 et 2015</li>
-                                    <li>Hôte d'accueil au Parc des Princes (Paris-Saint Germain) de 2008 à 2010</li>
+                                    <li>• Apprentis puis Chef Pizzaiolo a la pizzeria Mongelli de Montpellier de 2019 à 2021</li>
+                                    <li>• Responsable de cuisine au Petit Nice à Montpellier en 2019)</li>
+                                    <li>• Manager d'une Auberge de Jeunesse en Macédoine du Nord de 2016 à 2018</li>
+                                    <li>• Woofer et apprentis agriculteur/permaculteur/cuisinier/traiteur en Normandie en 2015 et 2016</li>
+                                    <li>• Serveur dans la boite de nuit les Aviateurs à Strasbourg en 2015</li>
+                                    <li>• Responsable de bar et salle au Clin\'s 20, Paris 20ème en 2014 et 2015</li>
+                                    <li>• Hôte d'accueil au Parc des Princes (Paris-Saint Germain) de 2008 à 2010</li>
                                 </ul>
                              </article>
                          </div>
@@ -344,7 +346,7 @@ $pages = [
                 <hr class='grid-header'>
                     
                 <div class=\"grid-content\">
-                    <form action=\"post\">
+                    <form action=\"src/submitFormular.php\" method='POST'  name='EmailForm'>
                          <fieldset class=\"light\"><sup class=\"orange\">*</sup> champs obligatoire</fieldset>
                          <label for='nom'>Votre Nom <sup class=\"orange\">*</sup>
                             <input type='text' name='nom' id='nom' required placeholder='Votre Nom'>
@@ -356,7 +358,7 @@ $pages = [
                          <label for='content'>Votre message <sup class=\"orange\">*</sup>
                             <textarea name=\"content\" id=\"txt\" cols=\"40\" rows=\"10\" placeholder=\"Écrivez votre texte...\" required></textarea>
                          </label>
-                         <button type=\"submit\" name=\"submit\"> envoyer</button>
+                         <button type=\"submit\" name=\"submit\" value='Submit'> envoyer</button>
                     </form>
                  </div>
             </section>

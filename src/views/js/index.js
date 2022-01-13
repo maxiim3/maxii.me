@@ -1,7 +1,3 @@
-
-
-
-
 //select menu btn
 const menuBtn = document.getElementById("btn-menu")
 //Set txt btn onload
