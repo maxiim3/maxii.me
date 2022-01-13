@@ -1,14 +1,36 @@
 <?php
-include_once 'src/classes/Pages.php';
-include_once 'src/datas/datas.php';
+    include_once 'src/classes/Pages.php';
+    include_once 'src/datas/datas.php';
 
-if (isset($_GET['page'])) {
-    $headTitle = $pages[$_GET['page']]->getTitle();
-    $loadContent = $pages[$_GET['page']]->getContent();
-} else {
-    $headTitle = $pages['accueil']->getTitle();
-    $loadContent = $pages["accueil"]->getContent();
-}
+    if (isset($_GET['page'])) {
+        $headTitle = $pages[$_GET['page']]->getTitle();
+        $loadContent = $pages[$_GET['page']]->getContent();
+    } else {
+        $headTitle = $pages['accueil']->getTitle();
+        $loadContent = $pages["accueil"]->getContent();
+    }
+
+    if(isset($_POST['submit'])){
+        if ($_POST['submit']) {
+
+            $name     = $_POST['nom'];
+            $mailFrom = $_POST['mail'];
+            $message  = $_POST['content'];
+            $subject  = "New message from ".$name;
+
+            $mailTo   = "contact@maxii.me";
+            $headers  = "From: ".$mailFrom;
+            $txt = "You have reseived an email from ".$name.".\n\n".$message;
+            mail($mailTo, $subject, $txt, $headers);
+            header("Location: ?message-envoyé");
+        }
+    }
+    if ($_GET["message-envoyé"])
+            $displayMessage = "Message envoyé !";
+    else{
+        $displayMessage = "";
+    }
+
 ?>
 
 <!doctype html>
@@ -29,11 +51,13 @@ if (isset($_GET['page'])) {
     <?php include_once 'src/template/nav.php'; ?>
     <div class="background background-mountain"></div>
     <main id="main" class="nav-onscreen">
-            <!--        // content will be load here-->
-            <?= $loadContent ?>
+        <aside class="messageForm" id="msgForm">
+            <?= $displayMessage ?>
+        </aside>
+        <!--        // content will be load here-->
+        <?= $loadContent ?>
     <!--FOOTER-->
-    <?php if (($_GET['page'] != 'accueil') && isset($_GET['page']) ){
-        include_once 'src/template/footer.php';}; ?>
+    <?php (($_GET['page'] != 'accueil') && isset($_GET['page']) )? include_once 'src/template/footer.php': '';?>
 
     </main>
     <script src="/src/views/js/index.js"></script>

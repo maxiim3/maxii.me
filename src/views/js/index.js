@@ -34,3 +34,12 @@ menuBtn.addEventListener("click", () =>{
         isDropped = !isDropped;
     }
 })
+
+
+// Select Message action status from contact form
+const msgForm = document.getElementById("msgForm")
+if (msgForm.innerText === ""){
+    msgForm.style.display = 'none';
+    msgForm.style.animation = 'none';
+
+}

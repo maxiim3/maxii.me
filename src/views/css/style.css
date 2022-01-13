@@ -81,7 +81,12 @@ p, a{
     font-size: 2rem;
 }
 a:visited{color:inherit}
-a:hover{color:var(--orange)}
+a:hover,
+a:hover i.fab,
+a:hover i.fas {
+    color: var(--orange)
+}
+
 
 i.fab,
 i.fas{
@@ -135,6 +140,43 @@ main{
         }
     }
 
+.messageForm {
+    position: absolute;
+    top: 15vh;
+    right: 2vw;
+    font-family: var(--ff-txt-prim);
+    font-size: 1rem;
+    background-color: rgba(239, 131, 84, 0.59);
+    color: white;
+    padding: 1rem 2rem ;
+    border-radius: 15px;
+    animation: msgFadeOut 8s ease-in-out forwards;
+}
+    @keyframes msgFadeOut  {
+        0% {
+            visibility: visible;
+            opacity: 0;
+            background-color: rgba(239, 131, 84, 0.5);
+        }
+        10% {
+            opacity: 1;
+            background-color: rgba(239, 131, 84, 0.9);
+        }
+        50% {
+            opacity: 1;
+            background-color: rgba(239, 131, 84, 0);
+        }
+        80% {
+            opacity: 0.8;
+        }
+        100% {
+            opacity: 0;
+            background-color: rgba(239, 131, 84, 0.0);
+            visibility: hidden;
+        }
+
+}
+
 .about-container,
 .form-container{
     height: auto;
@@ -174,40 +216,27 @@ main{
             }
         }
 
-    .grid-header{
-        grid-area: area-top;
-        justify-self: center;
-        align-self: end;
-    }
-    .grid-content{
-        grid-area: area-center;
-        justify-self: center;
-        align-self: center;
-    }
-        .grid-half-left {
-            grid-area: area-half-left;
-            justify-self: center;
-            align-self: start;
-        }
+    .grid-header{ grid-area: area-top; }
+    .grid-content{ grid-area: area-center; }
+    .grid-half-left { grid-area: area-half-left; }
+    .grid-half-right { grid-area: area-half-right; }
+
+        .grid-header,
+        .grid-content,
+        .grid-half-left,
         .grid-half-right {
-            grid-area: area-half-right;
             justify-self: center;
-            align-self: start;
         }
-            .grid-third-left {
-                grid-area: area-third-left;
-                justify-self: center;
+
+            .grid-header{
+                align-self: end;
+            }
+            .grid-content {
                 align-self: center;
             }
-            .grid-third-center {
-                grid-area: area-third-center;
-                justify-self: center;
-                align-self: center;
-            }
-            .grid-third-right {
-                grid-area: area-third-right;
-                justify-self: center;
-                align-self: center;
+            .grid-half-left,
+            .grid-half-right {
+                align-self: start;
             }
 
 .home-container{
@@ -217,16 +246,6 @@ main{
     .home-container :not(a){
         text-transform: uppercase;
     }
-        .home-container .grid-half-left {
-            grid-area: area-half-left;
-            justify-self: center;
-            align-self: center;
-        }
-        .home-container .grid-half-right {
-            grid-area: area-half-right;
-            justify-self: center;
-            align-self: center;
-        }
 
 .navTop,
 .navDrop,
@@ -245,7 +264,7 @@ main{
         display: grid;
         overflow: hidden;
         place-content: center;
-        background-color: rgba(255, 255, 255, 0.9);
+
         visibility: hidden;
         opacity: 0;
         transform: translateY(-100vh);
@@ -253,6 +272,7 @@ main{
                     transform 250ms,
                     visibility 500ms;
         transition-timing-function: ease-in-out;
+        background-color: rgba(255, 255, 255, 0.9);
     }
         @media (min-width: 730px) {
             .navDrop,
@@ -263,22 +283,22 @@ main{
                 visibility: visible;
                 display: initial;
             }
-            .navTop ul {
-                background-color: rgba(196, 196, 196, 0.1);
-                box-shadow: 0 5px 10px rgba(196, 196, 196, 0.1);
-                display: flex;
-                height: 10vh;
-                width: 100vw;
-                text-align: center;
-                justify-content: space-around;
-                text-transform: uppercase;
-                align-items: center;
-            }
-            .links a {
-                font-weight: var(--reg);
-                font-size: 1.6rem;
-                margin: 1rem;
-            }
+                .navTop ul {
+                    display: flex;
+                    height: 10vh;
+                    width: 100vw;
+                    text-align: center;
+                    justify-content: space-around;
+                    text-transform: uppercase;
+                    align-items: center;
+                    box-shadow: 0 5px 10px rgba(196, 196, 196, 0.15);
+                    background-color: rgba(196, 196, 196, 0.15);
+                }
+                    .links a {
+                        font-weight: var(--reg);
+                        font-size: 1.6rem;
+                        margin: 1rem;
+                    }
 
         }
         .navDrop ul{
@@ -350,7 +370,7 @@ hr{
 }
     .about-container p,
     .form-container{
-        padingg-top: 2rem;
+        padding-top: 2rem;
         font-size: 1.6rem;
         text-align: justify;
         line-height: 2.5rem;
@@ -515,12 +535,14 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
     footer a,
     footer p {
         font-size: 1.2rem;
         color: var(--gray-darker-50);
         margin-bottom: 2rem;
         text-align: center;
+        font-weight: 600;
     }
 
     footer i.fab,
@@ -541,4 +563,32 @@ footer {
             color: var(--gray-darker-50) !important;
         }
 
+@supports (-webkit-backdrop-filter: none )
+                   or (backdrop-filter: none) {
+    .navTop {
+        box-shadow: 0 5px 10px rgba(196, 196, 196, 0.1);
+        background-color: rgba(196, 196, 196, 0.1);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+    }
+    .navDrop{
+        background-color: rgba(236, 230, 230, 0.41);
+        backdrop-filter: blur(5px);
+        color: black;
+    }
+
+    .btn-wrap button{
+        background-color: rgba(236, 230, 230, 0.41);
+        backdrop-filter: blur(5px);
+    }
+    footer {
+        background-color: rgba(45, 49, 66, 0.15);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+    }
+    .messageForm{
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+    }
+}
 

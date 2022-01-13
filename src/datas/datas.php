@@ -346,7 +346,7 @@ $pages = [
                 <hr class='grid-header'>
                     
                 <div class=\"grid-content\">
-                    <form action=\"src/submitFormular.php\" method='POST'  name='EmailForm'>
+                    <form action=\"index.php\" method='POST'  name='EmailForm'>
                          <fieldset class=\"light\"><sup class=\"orange\">*</sup> champs obligatoire</fieldset>
                          <label for='nom'>Votre Nom <sup class=\"orange\">*</sup>
                             <input type='text' name='nom' id='nom' required placeholder='Votre Nom'>
