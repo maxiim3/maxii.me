@@ -186,12 +186,12 @@ main{
     }
         .grid-half-left {
             grid-area: area-half-left;
-            justify-self: start;
+            justify-self: center;
             align-self: start;
         }
         .grid-half-right {
             grid-area: area-half-right;
-            justify-self: start;
+            justify-self: center;
             align-self: start;
         }
             .grid-third-left {
