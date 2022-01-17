@@ -23,6 +23,20 @@
             $txt = "You have reseived an email from ".$name.".\n\n".$message;
             mail($mailTo, $subject, $txt, $headers);
             header("Location: ?message=envoye");
+
+            $responseFrom = $mailTo;
+            $responseSubject = "Merci pour votre message";
+            $responseHeaders = "From $responseFrom";
+            $dstName = $name;
+            $responseTo = $mailFrom;
+            $responseMsg = "Bonjour " .$dstName . ","
+                            ."<br>J'ai bien reçu votre message et vous répondrai dans les plus brefs délais! :)<br>"
+                            ."Cordialement<br>"
+                            ."Maxime Tamburrini<br>"
+                            .$responseFrom ;
+            mail($responseTo, $responseSubject, $responseMsg, $responseHeaders);
+            unset($_POST);
+
         }
     }
 

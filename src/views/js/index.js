@@ -48,10 +48,10 @@ if (msgForm.innerText === ""){
 const mainTitle = document.querySelector('.home-container h1')
 const subTitle = document.querySelector(".home-container h2")
 
-const setStyles = () => {
-    subTitle.style.opacity = 0
+window.onload = () => {
+    mainTitle.style.visibility = subTitle.style.visibility = "hidden";
     mainTitle.classList.add('textIn')
-    setTimeout(()=>{subTitle.classList.add('textIn')}, 500)
+    setTimeout(() => subTitle.classList.add('textIn'), 500)
+    setTimeout(() =>{mainTitle.style.visibility = subTitle.style.visibility = "visible"}, 1000)
 }
-document.onload(setStyles())
 
