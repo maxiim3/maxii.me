@@ -43,3 +43,15 @@ if (msgForm.innerText === ""){
     msgForm.style.animation = 'none';
 
 }
+
+
+const mainTitle = document.querySelector('.home-container h1')
+const subTitle = document.querySelector(".home-container h2")
+
+const setStyles = () => {
+    subTitle.style.opacity = 0
+    mainTitle.classList.add('textIn')
+    setTimeout(()=>{subTitle.classList.add('textIn')}, 500)
+}
+document.onload(setStyles())
+

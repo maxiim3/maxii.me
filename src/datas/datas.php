@@ -18,6 +18,7 @@ $pages = [
                 <section class=\"container about-container\">
                     <h2 class=\"grid-header\"   id=\"h2-angle\">À Propos</h2>
                     <hr class=\"grid-header\">
+                    
                     <article class=\"grid-content\">
                         <p>Je m’appelle Maxime, j’ai 33 ans</p>
                         <p>La passion pour le web a toujours été présente en moi, mais j’ai emprunté différents chemins avant d’en venir réellement au code.</p>
@@ -293,8 +294,8 @@ $pages = [
                                     <li>Programmation Orientée Objet</li>
                                     <li>Manipulation du DOM avec VanillaJS et jQuerry </li>
                                     <li>Création d’applications comme une Todo List</li>
-                                    <li class=\"light\">Inititation au Framework Angular</li>
-                                    <li class=\"light\">Inititation à NodeJS</li>
+                                    <li class=\"light\">Initiation au Framework Angular</li>
+                                    <li class=\"light\">Initiation à NodeJS</li>
                                     <li class=\"light\">Famillier avec la Librairie REACTJS</li>
                                 </ul>
                             </article>
@@ -336,6 +337,71 @@ $pages = [
                     </div>
                 </section>
                 "),
+    "ressources" => new Pages(
+        "Ressources",
+        "ressources",
+        "
+                 <section class='container skills-container'>
+                    
+                    <h2 class=\"grid-header\">Ressources</h2>
+                    <hr class='grid-header'>
+                
+                    <div class='grid-content'>
+                        <div class='sub grid-half-left'> 
+                            
+                            <article class='objet obj-skills'>
+                                <p>Quelques ressources téléchargeables</p>    
+                            </article>
+                            
+                            <article class='objet obj-skills'>
+                                <a href='/public/assets/pdf/CV_MAXIME_TAMBURRINI.pdf' download='CV_MAXIME_TAMBURRINI'>Télécharger mon CV au format pdf</a>    
+                            </article>
+                            <article class='objet obj-skills'>
+                                <h3>Formation Diginamic Prestashop : \"Création d'un site e-commerce\"</h3>
+                                <ul>    
+                                    <li><a href='/public/assets/pdf/DIGINAMIC_PRESTASHOP_ATTESTATION.pdf' download='DIGINAMIC_PRESTASHOP_ATTESTATION'>Attestation de formation</a></li>    
+                                    <li><a href='/public/assets/pdf/DIGINAMIC_PRESTASHOP_BILAN_FORMATION.pdf' download='DIGINAMIC_PRESTASHOP_BILAN_FORMATION'>Bilan de formation</a></li>
+                                </ul>    
+                            </article>
+                            <article class='objet obj-skills'>
+                                <h3>Certification : \"Programmation Orientée Objet en Java\"</h3>
+                                <ul>    
+                                    <li><a href='/public/assets/pdf/JAVA_CERTIF01.pdf' download='JAVA_CERTIF01'>Certificat de complétion Java niveau 1</a></li>    
+                                    <li><a href='/public/assets/pdf/JAVA_CERTIF02.pdf' download='JAVA_CERTIF02'>Certificat de complétion Java niveau 2</a></li>    
+                                    <li><a href='/public/assets/pdf/JAVA_CERTIF03.pdf' download='JAVA_CERTIF03'>Certificat de complétion Java niveau 3</a></li>    
+                                </ul>    
+                            </article>
+                            <article class='objet obj-skills'>
+                                <h3>Certification : \"Programmation Orientée Objet en JavaSCRIPT\"</h3>
+                                <ul>    
+                                    <li><a href='/public/assets/pdf/JAVASCRIPT_CERTIF01.pdf' download='JAVASCRIPT_CERTIF01'>Certificat de complétion JavaScript niveau 1</a></li>    
+                                    <li><a href='/public/assets/pdf/JAVASCRIPT_CERTIF02.pdf' download='JAVASCRIPT_CERTIF02'>Certificat de complétion JavaScript niveau 2</a></li>    
+                                </ul>    
+                            </article>
+                            <article class='objet obj-skills'>
+                                <h3>Certification : \"HTML-CSS\"</h3>
+                                <ul>    
+                                    <li><a href='/public/assets/pdf/HTML-CSS_CERTIF01.pdf' download='HTML-CSS_CERTIF01'>Certificat de complétion HTML-CSS niveau 1</a></li>    
+                                    <li><a href='/public/assets/pdf/HTML-CSS_CERTIF02.pdf' download='HTML-CSS_CERTIF02'>Certificat de complétion HTML-CSS niveau 2</a></li>    
+                                </ul>    
+                            </article>
+                            <article class='objet obj-skills'>
+                                <h3>Certification : \"Design Patterns et Data Structure\"</h3>
+                                <ul>    
+                                    <li><a href='/public/assets/pdf/DESIGN-PATTERN_CERTIF01.pdf' download='DESIGN-PATTERN_CERTIF01'>Certificat de complétion Design Pattern</a></li>    
+                                    <li><a href='/public/assets/pdf/ULTIMATE-DATASTRUCTURE_CERTIF01.pdf' download='ULTIMATE-DATASTRUCTURE_CERTIF01'>Certificat de complétion Structure de données et algorithmique</a></li>    
+                                </ul>    
+                            </article>
+
+                           
+                            
+                        </div>
+                        <div class='sub grid-half-right'> 
+                             
+                        </div>
+                    </div>
+                </section>
+                "),
     "contact" => new Pages(
         "Contact",
         "contact",
@@ -362,5 +428,5 @@ $pages = [
                     </form>
                  </div>
             </section>
-            ")
+                ")
 ];

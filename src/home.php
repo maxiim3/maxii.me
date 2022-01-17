@@ -22,10 +22,11 @@
             $headers  = "From: ".$mailFrom;
             $txt = "You have reseived an email from ".$name.".\n\n".$message;
             mail($mailTo, $subject, $txt, $headers);
-            header("Location: ?message-envoyé");
+            header("Location: ?message=envoye");
         }
     }
-    if ($_GET["message-envoyé"])
+
+    if ($_GET["message"]=="envoye")
             $displayMessage = "Message envoyé !";
     else{
         $displayMessage = "";
