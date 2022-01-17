@@ -107,7 +107,6 @@ body {
 }
 
 .background {
-    z-index: -99;
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -119,6 +118,8 @@ body {
     background-image: url('https://images.unsplash.com/photo-1502790671504-542ad42d5189?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80');
     background-attachment: fixed;
 }
+
+
 
 main {
     min-height: fit-content;
@@ -139,6 +140,8 @@ main {
                          "area-half-left  area-half-left"
                          "area-half-right area-half-right";
 }
+
+
 
 @media (min-width: 380px) {
     .home-container {
@@ -306,7 +309,7 @@ main {
     transform 250ms,
     visibility 500ms;
     transition-timing-function: ease-in-out;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
 }
 
 @media (min-width: 730px) {
@@ -367,9 +370,6 @@ main {
     color: var(--orange);
 }
 
-.btn-wrap {
-    z-index: 99;
-}
 
 .btn-wrap button {
     font-family: var(--ff-alt-txt);
@@ -402,8 +402,8 @@ hr {
     width: 100%;
     position: relative;
     top: 2rem;
-    z-index: -15;
 }
+
 
 
 .about-container article {
@@ -674,6 +674,7 @@ footer a:hover i.fas {
         color: black;
     }
 
+
     .btn-wrap button {
         background-color: rgba(236, 230, 230, 0.41);
         backdrop-filter: blur(5px);
@@ -698,4 +699,22 @@ footer a:hover i.fas {
 @keyframes textIn {
     from { opacity: 0}
     to { opacity: 100}
+}
+
+
+.background {
+    z-index: -100;
+}
+hr {
+    z-index: -50;
+}
+.home-container h1,
+.home-container h2 {
+    z-index: 0;
+}
+.navDrop {
+    z-index: 50
+}
+.btn-wrap {
+    z-index: 100;
 }
