@@ -747,14 +747,19 @@ hr {
     justify-content: center;
     align-items: center;
     color: black;
+    position: fixed;
+    bottom: 0;
 }
 
 
 #chat-window {
     height: 60%;
     width: 98%;
-    border-radius: 15px;
+    border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.85);
+    overflow-y: auto;
+    word-break: break-word;
+    overflow-x: hidden;
 }
 #chat-window article {
     width: 100%;
@@ -764,16 +769,24 @@ hr {
                          "msgBody";
 }
 
-article .answer {
-}
-article .question {
-}
 
 .chat-card .question > aside,
 .chat-card .answer > aside {
     grid-area: msgHeader;
-    font-size: 1rem;
-    font-style: italic;
+    font-size: 1.2rem;
+    margin-inline: 1rem;
+}
+.chat-card .question > p,
+.chat-card .answer > p {
+    grid-area: msgBody;
+    margin-inline: 1rem;
+}
+
+.chat-card .question > * {
+    justify-self: end;
+}
+.chat-card .answer > * {
+    justify-self: start;
 }
 
 .chat-card .question > aside > p,
@@ -784,16 +797,10 @@ article .question {
     display: inline-block;
 }
 
-.chat-card article > p {
-    grid-area: msgBody;
-}
-
-
 .chat-card .question > p,
 .chat-card .answer > p{
     width: fit-content;
-    margin-top: 1rem;
-    margin-inline: auto;
+    margin-inline: 1rem;
     padding: 1ch 2ch;
     border-radius: 15px;
     font-size: 1.4rem;
@@ -809,6 +816,7 @@ article .question {
     }
 
 #chat-input {
-    width: 100%;
+    width: 98%;
+    resize: none;
 }
 

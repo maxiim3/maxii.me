@@ -89,94 +89,7 @@ const dataSet = {
         "questions" :   ["Qui es-tu?", "Que sais-tu faire?", "Comment t'appelles-tu"],
         "answers"   :   ["Je suis un super Bot", "Pour l'instant des choses basiques, mais j'apprends vite!", "Je suis maxiBot, l'assistant personnel de Maxime Tamburrini"]
     },
-
-
 }
-
-    const usrBtn = document.getElementById("chat-btn")
-    const usrMsg = document.getElementById("chat-input")
-    const outputWindow = document.getElementById("chat-window")
-
-    usrBtn.addEventListener('click', ()=> {
-        const inputMsg = usrMsg.value
-
-        const displayMessage = (className, message) => {
-            const wrapMsg = document.createElement('article')
-            const label = document.createElement('aside')
-            const comment = document.createElement('p')
-            const msg = document.createElement("p")
-
-            wrapMsg.className = className
-            msg.innerText = message
-
-            const time = () => {
-                const date = new Date();
-                const hours = date.getHours()
-                const minutes = date.getMinutes()
-                return hours + " : " + minutes
-            }
-
-            if (className === "answer") {
-                const logoBot = document.createElement('i')
-                logoBot.className = "fas fa-robot"
-                comment.innerText = "Aujourd'hui à " + time()
-                label.appendChild(logoBot)
-            }
-            else
-                comment.innerText = "vous, aujourd'hui à "+ time()
-
-            label.appendChild(comment)
-            wrapMsg.appendChild(label)
-            wrapMsg.appendChild(msg)
-            outputWindow.appendChild(wrapMsg);
-        };
-
-        const randomValue = max => Math.floor(Math.random() * max);
-        const getRandomIndex = key => randomValue(dataSet[key]["answers"].length);
-
-        const getAnswer = () => {
-            let randomAnswer
-
-            for (let key in dataSet) {
-                let questions = dataSet[key]["questions"]
-                for (let question of questions) {
-                    if (levenshteinDistance(inputMsg.toLowerCase(), question.toLowerCase()) < 3) {
-                        randomAnswer = dataSet[key]["answers"][getRandomIndex(key)];
-                        break
-                    }
-                    // if (inputMsg.toLowerCase() === question.toLowerCase()) {
-                    //     randomAnswer = dataSet[key]["answers"][getRandomIndex(key)];
-                    //     break
-                    // }
-                }
-            }
-            return randomAnswer || "Désolé je n'ai pas compris"
-        };
-
-        console.log("Input Message : "  + inputMsg)
-        console.log("Output Message : " + getAnswer())
-
-        displayMessage("question", inputMsg)
-        setTimeout(() => {
-                    setTimeout(() => {
-                        displayMessage("answer", getAnswer())},
-                        randomValue(2500),
-                        1200)})
-
-
-        usrMsg.value = ""
-
-})
-
-
-
-//Default minimize window <i class="fas fa-minus-square"></i>
-// If inimized, open chat <i class="fas fa-caret-square-down"></i>
-// Usefull chat icon
-
-// Set overflow to chat window
-
-
 
 // Compute the edit distance between the two given strings
 const levenshteinDistance = (str1 = '', str2 = '') => {
@@ -200,3 +113,98 @@ const levenshteinDistance = (str1 = '', str2 = '') => {
     }
     return track[str2.length][str1.length];
 }
+
+    const usrBtn = document.getElementById("chat-btn")
+    const usrMsg = document.getElementById("chat-input")
+    const outputWindow = document.getElementById("chat-window")
+    const answers = document.getElementsByClassName("answer")
+
+usrBtn.addEventListener('click', ()=> {
+    const inputMsg = usrMsg.value
+
+    const scrollToBottom = () => {
+        const chatWindowheight = outputWindow.scrollHeight
+        outputWindow.scrollTo({
+            top: chatWindowheight,
+            left: 0,
+            behavior: "smooth"
+        })
+    };
+
+    const displayMessage = (className, message) => {
+        const wrapMsg = document.createElement('article')
+        const label = document.createElement('aside')
+        const comment = document.createElement('p')
+        const msg = document.createElement("p")
+
+        wrapMsg.className = className
+        msg.innerText = message
+
+        const time = () => {
+            const date = new Date();
+            const hours = date.getHours()
+            const minutes = date.getMinutes()
+            return hours + " : " + minutes
+        }
+
+        if (className === "answer") {
+            const logoBot = document.createElement('i')
+            logoBot.className = "fas fa-robot"
+            comment.innerText = "Aujourd'hui à " + time()
+            label.appendChild(logoBot)
+        } else
+            comment.innerText = "vous, aujourd'hui à " + time()
+
+        label.appendChild(comment)
+        wrapMsg.appendChild(label)
+        wrapMsg.appendChild(msg)
+        outputWindow.appendChild(wrapMsg);
+        scrollToBottom()
+    };
+
+    const randomValue = max => Math.floor(Math.random() * max);
+    const getRandomIndex = key => randomValue(dataSet[key]["answers"].length);
+
+    const getAnswer = () => {
+        let randomAnswer
+
+        for (let key in dataSet) {
+            let questions = dataSet[key]["questions"]
+            for (let question of questions) {
+                if (levenshteinDistance(inputMsg.toLowerCase(), question.toLowerCase()) < 3) {
+                    randomAnswer = dataSet[key]["answers"][getRandomIndex(key)];
+                    break
+                }
+                // if (inputMsg.toLowerCase() === question.toLowerCase()) {
+                //     randomAnswer = dataSet[key]["answers"][getRandomIndex(key)];
+                //     break
+                // }
+            }
+        }
+        return randomAnswer || "Désolé je n'ai pas compris"
+    };
+
+    console.log("Input Message : " + inputMsg)
+    console.log("Output Message : " + getAnswer())
+
+    displayMessage("question", inputMsg)
+    setTimeout(() => {
+        setTimeout(() => {
+                displayMessage("answer", getAnswer())
+            },
+            randomValue(2500),
+            1200)
+    })
+
+    usrMsg.value = ""
+    })
+
+
+
+
+
+//Default minimize window <i class="fas fa-minus-square"></i>
+// If inimized, open chat <i class="fas fa-caret-square-down"></i>
+// Usefull chat icon
+
+

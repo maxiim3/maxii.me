@@ -437,7 +437,7 @@ $pages = array(
                     </header>
                     <body>
                       <div id=\"chat-window\"></div>
-                      <textarea id=\"chat-input\" cols=\"30\" rows=\"3\" placeholder=\"Entrez votre message\"></textarea>
+                      <textarea id=\"chat-input\" cols=\"30\" rows=\"3\" placeholder=\"Entrez votre message\" autofocus></textarea>
                     </body>
                     <footer>
                         <button id=\"chat-btn\"><i class=\"fas fa-paper-plane\"></i></button>
