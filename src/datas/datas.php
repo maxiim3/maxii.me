@@ -423,5 +423,26 @@ $pages = array(
                     </form>
                  </div>
             </section>
+                "),
+    "chat" => new Pages(
+        "Chat",
+        "chat",
+        "
+            <section class=\"container skills-container chat-container\">              
+                <h2 class=\"grid-header\">Chat</h2>
+                <hr class=\"grid-header\">                  
+                <div class=\"grid-content chat-card\">
+                    <header>
+                        <button><i class=\"fas fa-minus-square\"></i></button>
+                    </header>
+                    <body>
+                      <div id=\"chat-window\"></div>
+                      <textarea id=\"chat-input\" cols=\"30\" rows=\"3\" placeholder=\"Entrez votre message\"></textarea>
+                    </body>
+                    <footer>
+                        <button id=\"chat-btn\"><i class=\"fas fa-paper-plane\"></i></button>
+                    </footer>
+                </div>
+            </section>
                 ")
 );
